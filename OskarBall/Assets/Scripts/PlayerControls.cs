@@ -8,7 +8,7 @@ public class PlayerControls : MonoBehaviour
 {
     #region SerializedFields
     [SerializeField]
-    float verticalForceMultiplier, horizontalForceMultiplier, jumpCheckDistance, maxHorizontalVelocity, dashSpeed, bounciness, jumpForceMultiplier, jumpTime, initialJumpForce;
+    float verticalForceMultiplier, horizontalForceMultiplier, jumpCheckDistance, maxHorizontalVelocity, dashSpeed, bounciness, jumpForceMultiplier, jumpTime, initialJumpForce, airborneHorizontalMultiplier;
 
     [SerializeField]
     PhysicMaterial bounceMat, noBounceMat, environmentMat;
@@ -43,6 +43,8 @@ public class PlayerControls : MonoBehaviour
     void Update()               //Determines which Movement to run depending on player input and whether the ball is still moving
     {
         //if paused: return
+        coll.material = Input.GetAxisRaw("Vertical") < 0f ? noBounceMat : bounceMat;
+        environmentMat.bounciness = Input.GetAxisRaw("Vertical") < 0f ? 0.0f : bounciness;
         currentMovement();
     }
 
@@ -50,8 +52,6 @@ public class PlayerControls : MonoBehaviour
     {
         //verticalForce = 0f;
         //rb.inertiaTensorRotation = new Quaternion(0.1f, 0.1f, 0.1f, 1f);
-        coll.material = Input.GetAxisRaw("Vertical") < 0f ? noBounceMat : bounceMat;
-        environmentMat.bounciness = Input.GetAxisRaw("Vertical") < 0f ? 0.0f : bounciness;
         if (Input.GetButtonDown("Dash") && !Grounded() && (Input.GetAxisRaw("Horizontal") != 0f || Input.GetAxisRaw("Vertical") != 0f))
         {
             Dash();
@@ -84,16 +84,21 @@ public class PlayerControls : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForceMultiplier);
         }
         //rb.AddTorque(-rb.angularVelocity * brakeForce);
-        horizontalForce = Input.GetAxisRaw("Horizontal");
-        rb.AddForce(new Vector3(horizontalForce * horizontalForceMultiplier, 0f, 0f));
+        if (!Grounded() || Input.GetAxisRaw("Vertical") >= 0f)
+        {
+            horizontalForce = Input.GetAxisRaw("Horizontal");
+            float horizontalMultiplier = Grounded() ? 1f : airborneHorizontalMultiplier;
+            rb.AddForce(new Vector3(horizontalForce * horizontalForceMultiplier * horizontalMultiplier, 0f, 0f));
+        }
+        else if (Grounded() && Input.GetAxisRaw("Vertical") < 0f)
+            rb.velocity = Vector3.zero;
         rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -maxHorizontalVelocity, maxHorizontalVelocity), rb.velocity.y, 0f);
     }
 
     void DashMovement()
     {
-        if (Mathf.Abs(rb.velocity.x) < 2f && Mathf.Abs(rb.velocity.y) < 0.5f)
+        if (Grounded() && Mathf.Abs(rb.velocity.y) < 0.5f)
         {
-            print("Dash done");
             currentMovement = DefaultMovement;
         }
     }
