@@ -1,9 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2027
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OskarBall", "OskarBall.csproj", "{DAF53509-D248-41F6-F504-0C99753D6F76}"
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OskarBall", "OskarBall.csproj", "{36B6208D-4DBB-D3A5-BCEA-245C3BAAD572}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +9,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DAF53509-D248-41F6-F504-0C99753D6F76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DAF53509-D248-41F6-F504-0C99753D6F76}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DAF53509-D248-41F6-F504-0C99753D6F76}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DAF53509-D248-41F6-F504-0C99753D6F76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36B6208D-4DBB-D3A5-BCEA-245C3BAAD572}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36B6208D-4DBB-D3A5-BCEA-245C3BAAD572}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36B6208D-4DBB-D3A5-BCEA-245C3BAAD572}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36B6208D-4DBB-D3A5-BCEA-245C3BAAD572}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {2DD5C4E1-044E-48DD-897E-3756F42FA742}
 	EndGlobalSection
 EndGlobal

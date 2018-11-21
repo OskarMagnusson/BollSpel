@@ -7,8 +7,42 @@ using UnityEngine;
 public class PlayerControls : MonoBehaviour
 {
     #region SerializedFields
+
     [SerializeField]
-    float verticalForceMultiplier, horizontalForceMultiplier, jumpCheckDistance, maxHorizontalVelocity, dashSpeed, bounciness, jumpForceMultiplier, jumpTime, initialJumpForce, airborneHorizontalMultiplier;
+    [Tooltip("Horizontal movement acceleration.")]
+    float horizontalForceMultiplier;
+
+    [SerializeField]
+    [Tooltip("Adds an offset when checking if grounded.")]
+    float jumpCheckDistance;
+
+    [SerializeField]
+    [Tooltip("Maximum horizontal movement speed.")]
+    float maxHorizontalVelocity;
+
+    [SerializeField]
+    [Tooltip("Amount of force added when dash is executed.")]
+    float dashSpeed;
+
+    [SerializeField]
+    [Tooltip("Controls how much the player bounces on the environment.")]
+    float bounciness;
+
+    [SerializeField]
+    [Tooltip("Amount of force added when the Jump button is held down.")]
+    float jumpForceMultiplier;
+
+    [SerializeField]
+    [Tooltip("How long the Jump button may be held to increase jump height.")]
+    float jumpTime;
+
+    [SerializeField]
+    [Tooltip("Amount of force added when the ump button is first pressed.")]
+    float initialJumpForce;
+
+    [SerializeField]
+    [Tooltip("Horizontal movement speed while airborne (0-1).")]
+    float airborneHorizontalMultiplier;
 
     [SerializeField]
     PhysicMaterial bounceMat, noBounceMat, environmentMat;
@@ -34,6 +68,7 @@ public class PlayerControls : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        FindObjectOfType<CameraBehavior>().PC = this;
         rb = GetComponent<Rigidbody>();
         radius = GetComponent<SphereCollider>().radius;
         coll = GetComponent<Collider>();
@@ -50,25 +85,11 @@ public class PlayerControls : MonoBehaviour
 
     void DefaultMovement()
     {
-        //verticalForce = 0f;
-        //rb.inertiaTensorRotation = new Quaternion(0.1f, 0.1f, 0.1f, 1f);
         if (Input.GetButtonDown("Dash") && !Grounded() && (Input.GetAxisRaw("Horizontal") != 0f || Input.GetAxisRaw("Vertical") != 0f))
         {
             Dash();
             return;
         }
-        /*
-        if (Input.GetButton("Jump"))
-        {
-            verticalForce += 5f;
-            if (verticalForce > maxJumpForce)
-                verticalForce = maxJumpForce;
-        }
-        else if (Input.GetButtonUp("Jump") && Grounded())
-        {
-            Jump();
-        }
-        */
         if (Input.GetButtonDown("Jump") && Grounded())
         {
             StartCoroutine("Jump");
@@ -78,12 +99,10 @@ public class PlayerControls : MonoBehaviour
             StopCoroutine("Jump");
             jumping = false;
         }
-        //horizontalForce = Grounded() ? Input.GetAxisRaw("Horizontal") : 0f;
         if (jumping)
         {
             rb.AddForce(Vector3.up * jumpForceMultiplier);
         }
-        //rb.AddTorque(-rb.angularVelocity * brakeForce);
         if (!Grounded() || Input.GetAxisRaw("Vertical") >= 0f)
         {
             horizontalForce = Input.GetAxisRaw("Horizontal");
@@ -118,20 +137,14 @@ public class PlayerControls : MonoBehaviour
         jumping = false;
     }
 
-    /*
-    void Jump()
-    {
-        //verticalForce = verticalForceMultiplier;
-        rb.AddForce(new Vector3(0f, verticalForce * verticalForceMultiplier, 0f));
-        verticalForce = 0f;
-    }
-    */
-
-
-
     void Dash()
     {
         currentMovement = DashMovement;
         rb.AddForce(Input.GetAxisRaw("Horizontal") * dashSpeed, Input.GetAxisRaw("Vertical") * dashSpeed, 0f);
+    }
+
+    public void Kill()
+    {
+        print("i iz dead"); //temp
     }
 }
