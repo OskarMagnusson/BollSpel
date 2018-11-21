@@ -913,7 +913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horizontalForceMultiplier: 10
-  jumpCheckDistance: 0.001
+  jumpCheckDistance: 0.0001
   maxHorizontalVelocity: 3
   dashSpeed: 3000
   bounciness: 0.4

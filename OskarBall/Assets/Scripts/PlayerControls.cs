@@ -110,7 +110,7 @@ public class PlayerControls : MonoBehaviour
             rb.AddForce(new Vector3(horizontalForce * horizontalForceMultiplier * horizontalMultiplier, 0f, 0f));
         }
         else if (Grounded() && Input.GetAxisRaw("Vertical") < 0f)
-            rb.velocity = Vector3.zero;
+            rb.velocity = new Vector3(rb.velocity.x, 0f, 0f);
         rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -maxHorizontalVelocity, maxHorizontalVelocity), rb.velocity.y, 0f);
     }
 
