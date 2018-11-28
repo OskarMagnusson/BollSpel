@@ -912,7 +912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 149ca007fdd709549b6d5700944b30b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalForceMultiplier: 10
+  horizontalForceMultiplier: 300
   jumpCheckDistance: 0.0001
   maxHorizontalVelocity: 3
   dashSpeed: 3000
