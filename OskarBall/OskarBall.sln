@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OskarBall", "Assembly-CSharp.csproj", "{93D8D9E9-09E4-64DE-386A-F6BF4951E089}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OskarBall", "Assembly-CSharp-Editor.csproj", "{FE520A36-C1AE-04DA-6B8F-E2FA46FD99EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{93D8D9E9-09E4-64DE-386A-F6BF4951E089}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93D8D9E9-09E4-64DE-386A-F6BF4951E089}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93D8D9E9-09E4-64DE-386A-F6BF4951E089}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE520A36-C1AE-04DA-6B8F-E2FA46FD99EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE520A36-C1AE-04DA-6B8F-E2FA46FD99EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE520A36-C1AE-04DA-6B8F-E2FA46FD99EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE520A36-C1AE-04DA-6B8F-E2FA46FD99EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

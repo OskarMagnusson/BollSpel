@@ -896,34 +896,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1263699092 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1493833414783024, guid: 385cd3055ddc714469878b0ee8db938f,
-    type: 2}
-  m_PrefabInternal: {fileID: 102422546}
---- !u!114 &1263699098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1263699092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 149ca007fdd709549b6d5700944b30b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  horizontalForceMultiplier: 300
-  jumpCheckDistance: 0.0001
-  maxHorizontalVelocity: 3
-  dashSpeed: 3000
-  bounciness: 0.4
-  jumpForceMultiplier: 25
-  jumpTime: 1.2
-  initialJumpForce: 1500
-  airborneHorizontalMultiplier: 0.5
-  bounceMat: {fileID: 13400000, guid: 7efa20869976d294b90fef9e70fdbf09, type: 2}
-  noBounceMat: {fileID: 13400000, guid: 77633a853a3efcf49ba01d649396e6a1, type: 2}
-  environmentMat: {fileID: 13400000, guid: d0bb6bfbab1109b45a55833b89a4853d, type: 2}
 --- !u!1 &1305824359
 GameObject:
   m_ObjectHideFlags: 0
