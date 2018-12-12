@@ -137,6 +137,20 @@ public class PlayerControls : MonoBehaviour
         jumping = false;
     }
 
+    public IEnumerator Launch(Vector3 direction, float force)
+    {
+        currentMovement = LaunchMovement;
+        rb.velocity = Vector3.zero;
+        rb.AddForce(direction * force);
+        yield return new WaitForSeconds(0.5f);
+        currentMovement = DashMovement;
+    }
+
+    void LaunchMovement()
+    {
+        return;
+    }
+
     void Dash()
     {
         currentMovement = DashMovement;
