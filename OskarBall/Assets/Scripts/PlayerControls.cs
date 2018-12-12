@@ -154,6 +154,7 @@ public class PlayerControls : MonoBehaviour
     void Dash()
     {
         currentMovement = DashMovement;
+        rb.velocity = Vector3.zero;
         rb.AddForce(Input.GetAxisRaw("Horizontal") * dashSpeed, Input.GetAxisRaw("Vertical") * dashSpeed, 0f);
     }
 
