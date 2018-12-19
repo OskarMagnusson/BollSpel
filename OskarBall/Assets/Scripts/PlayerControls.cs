@@ -160,6 +160,7 @@ public class PlayerControls : MonoBehaviour
 
     public void Kill()
     {
-        print("i iz dead"); //temp
-    }
+        StartCoroutine(GameManager.RespawnWait());
+        Destroy(this.gameObject);
+    }    
 }
