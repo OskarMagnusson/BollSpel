@@ -10,8 +10,8 @@ public static class GameManager {
     public static void LoadNextLevel()
     {
         int nextLevel = SceneManager.GetActiveScene().buildIndex + 1;
-        if (nextLevel < SceneManager.sceneCount)
-            SceneManager.LoadScene(nextLevel);
+        if (nextLevel <= SceneManager.sceneCountInBuildSettings)
+           SceneManager.LoadScene(nextLevel);
     }
 
     public static IEnumerator RespawnWait()

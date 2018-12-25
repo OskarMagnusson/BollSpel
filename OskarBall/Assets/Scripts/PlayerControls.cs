@@ -161,6 +161,7 @@ public class PlayerControls : MonoBehaviour
     public void Kill()
     {
         StartCoroutine(GameManager.RespawnWait());
-        Destroy(this.gameObject);
+        gameObject.GetComponent<Renderer>().enabled = false;
+        gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }    
 }
