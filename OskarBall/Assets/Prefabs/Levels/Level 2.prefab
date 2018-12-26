@@ -1195,10 +1195,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7b586fd6be2344087c588810b10f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minXPos: -20
-  maxXPos: 20
-  minYPos: -20
-  maxYPos: 20
+  minXPos: -0.5
+  maxXPos: 25
+  minYPos: 0
+  maxYPos: 12.5
   targetX: 0
   targetY: 0
 --- !u!114 &114343502694219596

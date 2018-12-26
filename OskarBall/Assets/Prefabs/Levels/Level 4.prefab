@@ -109,6 +109,8 @@ GameObject:
   - component: {fileID: 4393395192141432}
   - component: {fileID: 65293019941767940}
   - component: {fileID: 114967838747856248}
+  - component: {fileID: 65715991525244168}
+  - component: {fileID: 65630586586671340}
   m_Layer: 0
   m_Name: Bottomless pitt
   m_TagString: Untagged
@@ -224,7 +226,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1831364627223458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.5, y: -1, z: 0.5}
+  m_LocalPosition: {x: 14.5, y: -3, z: 0.5}
   m_LocalScale: {x: 21.883434, y: 1.9949217, z: 1}
   m_Children: []
   m_Father: {fileID: 4983299502833332}
@@ -542,6 +544,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65630586586671340
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1831364627223458}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12, y: 1.99, z: 1}
+  m_Center: {x: 0.38, y: 0.5, z: 0}
+--- !u!65 &65715991525244168
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1831364627223458}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12, y: 1.99, z: 1}
+  m_Center: {x: -0.404, y: 0.5, z: 0}
 --- !u!114 &114120789861610526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -588,12 +614,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7b586fd6be2344087c588810b10f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minXPos: -20
-  maxXPos: 20
-  minYPos: -20
-  maxYPos: 20
-  targetX: 10
-  targetY: 10
+  minXPos: 0
+  maxXPos: 29
+  minYPos: 0
+  maxYPos: 9
+  targetX: 0
+  targetY: 0
 --- !u!114 &114333628468145824
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -844,6 +844,8 @@ GameObject:
   - component: {fileID: 4603220215927404}
   - component: {fileID: 65822485961761542}
   - component: {fileID: 114768316456997042}
+  - component: {fileID: 65506611668715680}
+  - component: {fileID: 65469463145900480}
   m_Layer: 0
   m_Name: Bottomless pitt
   m_TagString: Untagged
@@ -1589,7 +1591,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1866404263862248}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11, y: -4, z: 0}
+  m_LocalPosition: {x: -11, y: -6, z: 0}
   m_LocalScale: {x: 12.382712, y: 3.0206602, z: 1}
   m_Children: []
   m_Father: {fileID: 4259633840170050}
@@ -3726,6 +3728,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.4, y: 0.5, z: 1}
   m_Center: {x: 0.25, y: 0.25, z: 0}
+--- !u!65 &65469463145900480
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1866404263862248}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.22, y: 1, z: 1}
+  m_Center: {x: -0.6, y: 0.66, z: 0}
 --- !u!65 &65487564722934544
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -3738,6 +3752,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.4, y: 0.5, z: 1}
   m_Center: {x: 0.25, y: 0.25, z: 0}
+--- !u!65 &65506611668715680
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1866404263862248}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.22, y: 1, z: 1}
+  m_Center: {x: 0.56, y: 0.66, z: 0}
 --- !u!65 &65598550100857986
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -16465,12 +16491,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7b586fd6be2344087c588810b10f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minXPos: -20
-  maxXPos: 20
-  minYPos: -20
-  maxYPos: 20
-  targetX: 10
-  targetY: 10
+  minXPos: -22
+  maxXPos: 22.5
+  minYPos: 0
+  maxYPos: 11
+  targetX: 0
+  targetY: 0
 --- !u!114 &114852734798354224
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -1300,6 +1300,8 @@ GameObject:
   - component: {fileID: 4367618052982318}
   - component: {fileID: 114661223414979126}
   - component: {fileID: 65656804389586600}
+  - component: {fileID: 65406373594191490}
+  - component: {fileID: 65993552295704978}
   m_Layer: 0
   m_Name: Botomless pitt
   m_TagString: Untagged
@@ -1420,7 +1422,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1283175957687182}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 27, y: 8, z: 0}
+  m_LocalPosition: {x: 27, y: 8, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4581578099968914}
@@ -1648,7 +1650,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1960573045347834}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.5, y: -7, z: 0}
+  m_LocalPosition: {x: 13.5, y: -9, z: 0}
   m_LocalScale: {x: 19.620443, y: 2.8498225, z: 1}
   m_Children: []
   m_Father: {fileID: 4716976469908452}
@@ -4626,6 +4628,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.4, y: 0.5, z: 1}
   m_Center: {x: 0.25, y: 0.25, z: 0}
+--- !u!65 &65406373594191490
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1960573045347834}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.15, y: 1, z: 1}
+  m_Center: {x: 0.59, y: 0.72, z: 0}
 --- !u!65 &65504873387603360
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -4722,6 +4736,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.4, y: 0.5, z: 1}
   m_Center: {x: 0.25, y: 0.25, z: 0}
+--- !u!65 &65993552295704978
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1960573045347834}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.15, y: 1, z: 1}
+  m_Center: {x: -0.56, y: 0.72, z: 0}
 --- !u!65 &65999765732784418
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -20075,12 +20101,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7b586fd6be2344087c588810b10f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minXPos: -20
-  maxXPos: 20
-  minYPos: -20
-  maxYPos: 20
-  targetX: 10
-  targetY: 10
+  minXPos: -1.5
+  maxXPos: 29
+  minYPos: -2.5
+  maxYPos: 12.5
+  targetX: 0
+  targetY: 0
 --- !u!114 &114885480850635468
 MonoBehaviour:
   m_ObjectHideFlags: 1
