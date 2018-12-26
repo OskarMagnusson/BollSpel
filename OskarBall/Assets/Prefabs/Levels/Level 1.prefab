@@ -2743,8 +2743,8 @@ MonoBehaviour:
   maxXPos: 20
   minYPos: -20
   maxYPos: 20
-  targetX: 10
-  targetY: 10
+  targetX: 0
+  targetY: 0
 --- !u!114 &114907678419874272
 MonoBehaviour:
   m_ObjectHideFlags: 1

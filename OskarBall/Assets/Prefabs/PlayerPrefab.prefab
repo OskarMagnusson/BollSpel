@@ -116,10 +116,10 @@ MonoBehaviour:
   maxHorizontalVelocity: 3
   dashSpeed: 3000
   bounciness: 0.4
-  jumpForceMultiplier: 25
-  jumpTime: 1.2
+  jumpForceMultiplier: 33
+  jumpTime: 0.6
   initialJumpForce: 1500
-  airborneHorizontalMultiplier: 0.5
+  airborneHorizontalMultiplier: 0.35
   bounceMat: {fileID: 13400000, guid: 7efa20869976d294b90fef9e70fdbf09, type: 2}
   noBounceMat: {fileID: 13400000, guid: 77633a853a3efcf49ba01d649396e6a1, type: 2}
   environmentMat: {fileID: 13400000, guid: d0bb6bfbab1109b45a55833b89a4853d, type: 2}

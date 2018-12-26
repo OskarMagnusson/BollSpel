@@ -68,5 +68,5 @@ MonoBehaviour:
   maxXPos: 20
   minYPos: -20
   maxYPos: 20
-  targetX: 10
-  targetY: 10
+  targetX: 0
+  targetY: 0
