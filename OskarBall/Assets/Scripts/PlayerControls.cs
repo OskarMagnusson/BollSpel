@@ -11,11 +11,7 @@ public class PlayerControls : MonoBehaviour
     [SerializeField]
     [Tooltip("Horizontal movement acceleration.")]
     float horizontalForceMultiplier;
-
-    [SerializeField]
-    [Tooltip("Adds an offset when checking if grounded.")]
-    float jumpCheckDistance;
-
+    
     [SerializeField]
     [Tooltip("Maximum horizontal movement speed.")]
     float maxHorizontalVelocity;
@@ -103,14 +99,17 @@ public class PlayerControls : MonoBehaviour
         {
             rb.AddForce(Vector3.up * jumpForceMultiplier);
         }
+        float horizontalMultiplier = Grounded() ? 1f : airborneHorizontalMultiplier;
+        horizontalForce = Input.GetAxisRaw("Horizontal");
         if (!Grounded() || Input.GetAxisRaw("Vertical") >= 0f)
         {
-            horizontalForce = Input.GetAxisRaw("Horizontal");
-            float horizontalMultiplier = Grounded() ? 1f : airborneHorizontalMultiplier;
             rb.AddForce(new Vector3(horizontalForce * horizontalForceMultiplier * horizontalMultiplier, 0f, 0f));
         }
         else if (Grounded() && Input.GetAxisRaw("Vertical") < 0f)
-            rb.velocity = new Vector3(rb.velocity.x, 0f, 0f);
+        {
+            float hSpeed = Input.GetAxisRaw("Horizontal") == 0f ? rb.velocity.x : horizontalForce * horizontalForceMultiplier * horizontalMultiplier;
+            rb.velocity = new Vector3(hSpeed, 0f, 0f);
+        }
         rb.velocity = new Vector3(Mathf.Clamp(rb.velocity.x, -maxHorizontalVelocity, maxHorizontalVelocity), rb.velocity.y, 0f);
     }
 
@@ -125,7 +124,7 @@ public class PlayerControls : MonoBehaviour
     bool Grounded()
     {
         RaycastHit hit;
-        return Physics.SphereCast(transform.position, radius / 2, Vector3.down, out hit, radius + jumpCheckDistance);
+        return Physics.SphereCast(transform.position, radius / 2, Vector3.down, out hit, radius / 2);
     }
 
     IEnumerator Jump()
@@ -163,5 +162,5 @@ public class PlayerControls : MonoBehaviour
         StartCoroutine(GameManager.RespawnWait());
         gameObject.GetComponent<Renderer>().enabled = false;
         gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-    }    
+    }
 }
