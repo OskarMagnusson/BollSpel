@@ -7,7 +7,16 @@ using UnityEngine;
 public class CameraBehavior : MonoBehaviour
 {
     [SerializeField]
-    float minMoveDistance, maxStopDistance, speed;
+    [Tooltip("How far away from the camera the player needs to be for the camera to follow.")]
+    float minMoveDistance;
+
+    [SerializeField]
+    [Tooltip("How close to the player the camera needs to get in order to stop.")]
+    float maxStopDistance;
+
+    [SerializeField]
+    [Tooltip("How fast the camera moves.")]
+    float speed;
 
     delegate void CameraMovement();
 
@@ -27,12 +36,6 @@ public class CameraBehavior : MonoBehaviour
     void Start()
     {
         zPos = transform.position.z;
-        /*
-        minXPos = transform.position.x;
-        maxXPos = transform.position.x;
-        minYPos = transform.position.y;
-        maxYPos = transform.position.y;
-        */
         currentCameraMovement = DefaultCameraMovement;
     }
 
@@ -54,7 +57,6 @@ public class CameraBehavior : MonoBehaviour
             transform.position = new Vector3(Mathf.Clamp(transform.position.x, minXPos, maxXPos), Mathf.Clamp(transform.position.y, minYPos, maxYPos), zPos);
             if (transform.position.x - pC.transform.position.x < maxStopDistance && transform.position.y - pC.transform.position.y < maxStopDistance)
             {
-                print("stop moving");
                 moving = false;
             }
         }
@@ -62,7 +64,6 @@ public class CameraBehavior : MonoBehaviour
         {
             if (transform.position.x - pC.transform.position.x > minMoveDistance || transform.position.x - pC.transform.position.x < -minMoveDistance || transform.position.y - pC.transform.position.y > minMoveDistance || transform.position.y - pC.transform.position.y < -minMoveDistance)
             {
-                print("start moving");
                 moving = true;
             }
         }
