@@ -124,7 +124,7 @@ public class PlayerControls : MonoBehaviour
     bool Grounded()
     {
         RaycastHit hit;
-        return Physics.SphereCast(transform.position, radius / 2, Vector3.down, out hit, radius / 2);
+        return Physics.SphereCast(transform.position, radius / 2, Vector3.down, out hit, radius / 2 + 0.01f);
     }
 
     IEnumerator Jump()
