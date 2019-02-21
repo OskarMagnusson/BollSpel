@@ -18,6 +18,9 @@ public class CameraBehavior : MonoBehaviour
     [Tooltip("How fast the camera moves.")]
     float speed;
 
+    [SerializeField]
+    float skyboxRotationSpeed;
+
     delegate void CameraMovement();
 
     CameraMovement currentCameraMovement;
@@ -42,6 +45,7 @@ public class CameraBehavior : MonoBehaviour
     void LateUpdate()
     {
         currentCameraMovement();
+        RenderSettings.skybox.SetFloat("_Rotation", Time.time * skyboxRotationSpeed);
     }
 
     void DefaultCameraMovement()

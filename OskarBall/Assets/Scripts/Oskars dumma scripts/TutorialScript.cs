@@ -9,15 +9,11 @@ public class TutorialScript : MonoBehaviour {
     Text tutorial;
 
     [SerializeField]
-    Text tutorial2;
-
-    [SerializeField]
     float fadeSpeed;
 
 	// Use this for initialization
 	void Start () {
         tutorial.color = new Color(tutorial.color.r, tutorial.color.g, tutorial.color.b, 0);
-        tutorial2.color = new Color(tutorial2.color.r, tutorial2.color.g, tutorial2.color.b, 0);
     }
 	
 	// Update is called once per frame
@@ -28,13 +24,11 @@ public class TutorialScript : MonoBehaviour {
     void OnTriggerEnter(Collider col)
     {
         StartCoroutine(FadeIn(fadeSpeed, tutorial));
-        StartCoroutine(FadeIn(fadeSpeed, tutorial2));
     }
 
     void OnTriggerExit(Collider col)
     {
         StartCoroutine(FadeOut(fadeSpeed, tutorial));
-        StartCoroutine(FadeOut(fadeSpeed, tutorial2));
     }
 
     IEnumerator FadeIn(float s, Text t)
